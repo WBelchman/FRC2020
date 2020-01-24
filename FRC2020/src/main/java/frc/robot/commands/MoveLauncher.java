@@ -5,11 +5,11 @@ import frc.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class MoveShoulder extends Command {
+public class MoveLauncher extends Command {
     OI oi = Robot.m_oi;
 
-    public MoveShoulder() {
-        requires(Robot.shoulder);
+    public MoveLauncher() {
+        requires(Robot.collector);
     }
 
     protected void initialize() {
@@ -17,7 +17,7 @@ public class MoveShoulder extends Command {
 
     protected void execute() {
         // Passes OI into elevator
-        Robot.shoulder.moveShoulder(oi.getBumpers());
+        //set speed
     }
 
     protected boolean isFinished() {

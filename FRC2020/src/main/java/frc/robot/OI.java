@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Button;
 
+//Sets controls. Will update once mechanisms are testable
+
 public class OI {
 
 	boolean grabberState = true;
@@ -22,23 +24,9 @@ public class OI {
 	Button leftBumper = new JoystickButton(xbox, 5);
 	Button rightBumper = new JoystickButton(xbox, 6);
 
-	//Gets the pressed xbox bumper (Used in MoveShoulder command)
-	//0 no bumper; 1 left bumper; 2 right bumper
-	public int getBumpers(){
-		if (leftBumper.get()){
-			return 1;
-		}
-		else if (rightBumper.get()){	
-			return 2;
-		}
-		else{
-			return 0;
-		}
-	}
 
-	//Not the actual speed of the elevator
-	//Gets inputs from the xbox sticks
-	public double getElevatorSpeed() {
+	//Gets position inputs from the xbox sticks
+	public double getCollectorSpeed() {
 		if (xbox.getRawAxis(5) > 0.1 || xbox.getRawAxis(5) < -0.1) {
 			return xbox.getRawAxis(5);
 		} else {
@@ -46,7 +34,7 @@ public class OI {
 		}
 	}
 
-	public double getGrabberSpeed() {
+	public double getLauncherSpeed() {
 		if (xbox.getRawAxis(1) > 0.1 || xbox.getRawAxis(1) < -0.1) {
 			return xbox.getRawAxis(1);
 		} else {
@@ -54,6 +42,7 @@ public class OI {
 		}
 	}
 
+	//Sticks for drive motors
 	public double getLeftSpeed() {
 		if (leftStick.getY() > 0.1 || leftStick.getY() < -0.1) {
 			return leftStick.getY();
@@ -67,16 +56,6 @@ public class OI {
 			return -1.0 * rightStick.getY();
 		} else {
 			return 0.0;
-		}
-	}
-
-	public boolean grabberState() {
-		if (grabberState == false) {
-			grabberState = true;
-			return true;
-		} else {
-			grabberState = false;
-			return false;
 		}
 	}
 }

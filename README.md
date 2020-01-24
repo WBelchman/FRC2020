@@ -7,13 +7,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-The FRC 2020 Java/Eclipse WPI screensteps have been completed in their entirety
+The FRC 2020 Java/Visual Studio Code WPILib installation
 
 ### Installing
 
 Install [git](https://git-scm.com/downloads)
 
-Go through [CTRE installation steps](http://www.ctr-electronics.com/downloads/pdf/CTRE%20Toolsuite%20Installation%20Guide.pdf)
+Go through [CTRE installation steps](https://phoenix-documentation.readthedocs.io/en/latest/ch05_PrepWorkstation.html)
 
 That's it, you are ready to code!
 
